@@ -104,6 +104,10 @@ RUN set -ex; \
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
 	rm wordpress.tar.gz; \
 	chown -R www-data:www-data /usr/src/wordpress
+	
+RUN apt update && apt install -y git
+
+RUN git clone https://github.com/iolufemi/wp-svbtle.git /usr/src/theme && cp -rf /usr/src/theme/* /usr/src/wordpress && rm -rf /usr/src/theme
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
