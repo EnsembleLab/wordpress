@@ -107,7 +107,7 @@ RUN set -ex; \
 	
 RUN apt update && apt install -y git
 
-RUN git clone https://github.com/iolufemi/wp-svbtle.git /usr/src/theme && cp -rf /usr/src/theme/* /usr/src/wordpress && mv /usr/src/wordpress/wp-svbtle /usr/src/wordpress/editor  && rm -rf /usr/src/theme
+RUN git clone https://github.com/iolufemi/wp-svbtle.git /usr/src/theme && cp -rf /usr/src/theme/* /usr/src/wordpress && rm -rf /usr/src/theme
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
